@@ -93,6 +93,5 @@ test.describe('DemoQa practice', () => {
 		await page.locator('#datePickerMonthYearInput').click();
 
 		await page.locator('.react-datepicker__month').click();
-
 	});
 });
