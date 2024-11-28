@@ -83,7 +83,7 @@ test.describe('DemoQa practice', () => {
 	
 	test('Web Tables', async ({ page }) => {
 	
-		//TODO закончить с этим тестом
+	//TODO закончить с этим тестом
 
 	});
 	
