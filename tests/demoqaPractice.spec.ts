@@ -60,38 +60,38 @@ test.describe('DemoQa practice', () => {
 		};
 	});
 
-	// test('Lists and dropdowns', async ({ page }) => {
-	// 	await page.getByRole('heading', { name: 'Widgets', }).filter({hasText: 'Widgets'}).click();
-	// 	await page.getByRole('list').getByText('Select Menu').click();
-	// 	await page.locator('#oldSelectMenu').click();
-	// });
+	test('Lists and dropdowns', async ({ page }) => {
+		await page.getByRole('heading', { name: 'Widgets', }).filter({hasText: 'Widgets'}).click();
+		await page.getByRole('list').getByText('Select Menu').click();
+		await page.locator('#oldSelectMenu').click();
+	});
 
-	// //FIXME Тест нестабилен в headed моде. Необходимо разобраться подробнее!
+	//FIXME Тест нестабилен в headed моде. Необходимо разобраться подробнее!
 
-	// test('Tool tips', async ({ page }) => {
-	// 	await page.getByRole('heading', { name: 'Widgets' }).click();
-	// 	await page.getByRole('list').getByText('Tool tips').click();
+	test('Tool tips', async ({ page }) => {
+		await page.getByRole('heading', { name: 'Widgets' }).click();
+		await page.getByRole('list').getByText('Tool tips').click();
 		
-	// 	await page.getByRole('button', { name: 'Hover me to see' }).hover();
-	// 	const ttText = await page.locator('div .tooltip-inner').textContent();
-	// 	expect(ttText).toEqual('You hovered over the Button');
+		await page.getByRole('button', { name: 'Hover me to see' }).hover();
+		const ttText = await page.locator('div .tooltip-inner').textContent();
+		expect(ttText).toEqual('You hovered over the Button');
 		
-	// 	await page.getByRole('textbox', { name: 'Hover me to see' }).hover();
-	// 	const tfText = await page.getByText('You hovered over the text').textContent();
-	// 	expect(tfText).toEqual('You hovered over the text field');
-	// });
+		await page.getByRole('textbox', { name: 'Hover me to see' }).hover();
+		const tfText = await page.getByText('You hovered over the text').textContent();
+		expect(tfText).toEqual('You hovered over the text field');
+	});
 	
-	// test('Web Tables', async ({ page }) => {
+	test('Web Tables', async ({ page }) => {
 	
-	// //TODO закончить с этим тестом
+	//TODO закончить с этим тестом
 
-	// });
+	});
 	
-	// test('Date Picker', async ({ page }) => {
-	// 	await page.getByRole('heading', { name: 'Widgets' }).click();
-	// 	await page.getByRole('list').getByText('Date Picker').click();
-	// 	await page.locator('#datePickerMonthYearInput').click();
+	test('Date Picker', async ({ page }) => {
+		await page.getByRole('heading', { name: 'Widgets' }).click();
+		await page.getByRole('list').getByText('Date Picker').click();
+		await page.locator('#datePickerMonthYearInput').click();
 
-	// 	await page.locator('.react-datepicker__month').click();
-	// });
+		await page.locator('.react-datepicker__month').click();
+	});
 });
