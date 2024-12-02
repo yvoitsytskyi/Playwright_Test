@@ -1,15 +1,14 @@
 import { expect, test } from '@playwright/test';
+import { NavigationPage } from '../page_objects/navigationPage.spec';
 
 test.describe('DemoQa practice', () => {
 	test.beforeEach(async ({ page }) => {
-		await page.goto(('https://demoqa.com/'));
+		await page.goto('https://demoqa.com/');
 	});
 
 	test('Radio button', async ({ page }) => {
 		await page.getByRole('heading', { name: 'Elements' }).click();
 		await page.locator('li').getByText('Radio Button').click();
-		// await page.locator('.custom-radio #yesRadio').check({force:true})
-		// await page.locator('.custom-radio #impressiveRadio').check({force:true})
 		const yesRb = page.locator('.custom-radio #yesRadio');
 		const impressiveRb = page.locator('.custom-radio #impressiveRadio');
 
@@ -60,38 +59,60 @@ test.describe('DemoQa practice', () => {
 		};
 	});
 
-	test('Lists and dropdowns', async ({ page }) => {
-		await page.getByRole('heading', { name: 'Widgets', }).filter({hasText: 'Widgets'}).click();
-		await page.getByRole('list').getByText('Select Menu').click();
-		await page.locator('#oldSelectMenu').click();
-	});
+	// test('Lists and dropdowns', async ({ page }) => {
+	// 	await page.getByRole('heading', { name: 'Widgets', }).filter({ hasText: 'Widgets' }).click();
+	// 	await page.getByRole('list').getByText('Select Menu').click();
+	// 	await page.locator('#oldSelectMenu').selectOption({ label: 'red' });
+	// });
 
 	//FIXME Тест нестабилен в headed моде. Необходимо разобраться подробнее!
 
 	test('Tool tips', async ({ page }) => {
 		await page.getByRole('heading', { name: 'Widgets' }).click();
 		await page.getByRole('list').getByText('Tool tips').click();
-		
+
 		await page.getByRole('button', { name: 'Hover me to see' }).hover();
 		const ttText = await page.locator('div .tooltip-inner').textContent();
 		expect(ttText).toEqual('You hovered over the Button');
-		
+
 		await page.getByRole('textbox', { name: 'Hover me to see' }).hover();
 		const tfText = await page.getByText('You hovered over the text').textContent();
 		expect(tfText).toEqual('You hovered over the text field');
 	});
-	
-	test('Web Tables', async ({ page }) => {
-	
-	//TODO закончить с этим тестом
 
-	});
-	
+	//TODO разобраться с темой - таблицы
+	// test('Web Tables', async ({ page }) => {
+	// });
+
 	test('Date Picker', async ({ page }) => {
 		await page.getByRole('heading', { name: 'Widgets' }).click();
 		await page.getByRole('list').getByText('Date Picker').click();
-		await page.locator('#datePickerMonthYearInput').click();
+		const InputField = page.locator('#datePickerMonthYearInput');
 
-		await page.locator('.react-datepicker__month').click();
+		let date = new Date();
+		let newDate = date.setDate(date.getDate() + 5).toLocaleString();
+		await InputField.fill(newDate);
+		await expect(InputField).toHaveValue(newDate);
+
+		// await page.getByRole('listbox').getByRole('option', { name: "Choose Thursday, November 21st, 2024" }).click();
 	});
+
+	test('Slider', async ({ page }) => {
+		await page.getByRole('heading', { name: 'Widgets', }).filter({ hasText: 'Widgets' }).click();
+		await page.locator('li').filter({ hasText: 'Slider' }).click();
+		const slider = page.getByRole('slider');
+		// await slider.locator('')
+		await slider.evaluate(node => {
+			node.setAttribute('value', '30');
+			node.setAttribute('style', "30");
+		});
+		await slider.click();
+	});
+
+	test('page object using', async ({ page }) => {
+		const navigateTo = new NavigationPage(page);
+		await navigateTo.elements();
+		await navigateTo.interactions();
+		await navigateTo.alertsFrameWindows();
+	})
 });

@@ -1,3 +1,72 @@
 {
-	"editor.fontSize": 14
+    // Основные настройки редактора
+    "editor.folding": false,
+    "editor.insertSpaces": false,
+    "editor.detectIndentation": true,
+    "editor.suggestSelection": "first",
+    // Прокрутка за пределы последней строки
+    "editor.scrollBeyondLastLine": true,
+    "files.autoSave": "afterDelay",
+    "notebook.output.fontSize": 16,
+    "code-runner.clearPreviousOutput": true,
+    // Скролл
+    "editor.scrollbar.verticalScrollbarSize": 0,
+    "editor.scrollbar.horizontalScrollbarSize": 0,
+    // Внешний вид
+    // "editor.glyphMargin": false,
+    "workbench.editor.empty.hint": "hidden",
+    "editor.fontSize": 14,
+    "editor.linkedEditing": true,
+    "editor.smoothScrolling": true,
+    "editor.minimap.enabled": false,
+    //Wrapping
+    "editor.wordWrap": "bounded",
+    "editor.wrappingIndent": "same",
+    "editor.wordWrapColumn": 150,
+    "window.zoomLevel": 0.5,
+    "workbench.iconTheme": "material-icon-theme",
+    "explorer.confirmDragAndDrop": false,
+    "workbench.colorTheme": "Theme Darker",
+    "editor.fontLigatures": true,
+    "editor.scrollbar.horizontal": "hidden",
+    "editor.scrollbar.vertical": "hidden",
+    "workbench.productIconTheme": "fluent-icons",
+    "window.density.editorTabHeight": "compact",
+    "editor.accessibilitySupport": "off",
+    "window.commandCenter": false,
+    "workbench.layoutControl.enabled": false,
+    // "workbench.colorCustomizations": {
+    //     "activityBar.background": "#00000126",
+    //     "activityBar.foreground": "#77d50c",
+    // },
+    //Cursor
+    "editor.cursorBlinking": "expand",
+    "editor.cursorStyle": "line",
+    "editor.cursorSmoothCaretAnimation": "explicit",
+    "editor.lineHeight": 1.8,
+
+    // Spell Checker 
+    "cSpell.language": "en, ru",
+    "cSpell.userWords": [
+        "Consolas",
+        "Fira",
+        "modificator",
+        "modificators",
+        "onetrust",
+        "Voitsytskyi",
+        "Yevhen",
+        "джавистом",
+        "Скролл"
+    ],
+    "explorer.confirmDelete": false,
+    "playwright.reuseBrowser": true,
+    "playwright.showTrace": false,
+    "terminal.integrated.fontSize": 14,
+    "typescript.suggest.completeFunctionCalls": true,
+    "javascript.suggest.completeFunctionCalls": true,
+    "workbench.startupEditor": "none",
+    "window.confirmSaveUntitledWorkspace": false,
+    "git.confirmSync": false,
+    "git.enableSmartCommit": true,
+    "tabnine.experimentalAutoImports": true,
 }
