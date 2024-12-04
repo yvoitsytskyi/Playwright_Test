@@ -69,4 +69,9 @@
     "git.confirmSync": false,
     "git.enableSmartCommit": true,
     "tabnine.experimentalAutoImports": true,
+    "cSpell.words": [
+        "Accordian",
+        "Rbtn",
+        "yvoitsytskyi"
+    ],
 }
