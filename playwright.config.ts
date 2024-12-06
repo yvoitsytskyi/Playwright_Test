@@ -36,21 +36,24 @@ export default defineConfig({
   projects: [
     {
       name: 'chromium',
-      use: { ...devices['Desktop Chrome'],
+      use: {
+        ...devices['Desktop Chrome'],
         viewport: { width: 1680, height: 1050 },
-       },
+      },
     },
 
     {
       name: 'firefox',
-      use: { ...devices['Desktop Firefox'], 
-        viewport: { width: 1680, height: 1050 },  
+      use: {
+        ...devices['Desktop Firefox'],
+        viewport: { width: 1680, height: 1050 },
       },
     },
 
     {
       name: 'webkit',
-      use: { ...devices['Desktop Safari'], 
+      use: {
+        ...devices['Desktop Safari'],
         viewport: { width: 1680, height: 1050 },
       },
     },
@@ -68,15 +71,19 @@ export default defineConfig({
     /* Test against branded browsers. */
     {
       name: 'Microsoft Edge',
-      use: { ...devices['Desktop Edge'], 
-        viewport: { width: 1680, height: 1050 }, 
-        channel: 'msedge' },
+      use: {
+        ...devices['Desktop Edge'],
+        viewport: { width: 1680, height: 1050 },
+        channel: 'msedge'
+      },
     },
     {
       name: 'Google Chrome',
-      use: { ...devices['Desktop Chrome'],
-        viewport: { width: 1680, height: 1050 }, 
-        channel: 'chrome' },
+      use: {
+        ...devices['Desktop Chrome'],
+        viewport: { width: 1680, height: 1050 },
+        channel: 'chrome'
+      },
     },
   ],
 

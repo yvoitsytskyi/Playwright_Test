@@ -12,13 +12,13 @@ export class NavigationPage extends HelperBase {
 			await this.page.goto('https://demoqa.com/');
 	};
 
-	async radioButton() {
+	async radioButtonPage() {
 		await this.getCurrentPage()
 		await this.page.getByRole('heading', { name: 'Elements' }).click();
 		await this.page.locator('li').getByText('Radio Button').click();
 	};
 
-	async checkBox() {
+	async checkBoxPage() {
 		await this.getCurrentPage()
 		await this.page.getByRole('heading', { name: 'Elements' }).click();
 		await this.page.locator('li').getByText('Check Box').click();
